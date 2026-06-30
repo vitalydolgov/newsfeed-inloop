@@ -1,0 +1,20 @@
+[project]
+name = "newsfeed"
+version = "0.1.0"
+description = "Newsfeed: TechCrunch, Hacker News, Lobsters"
+requires-python = ">=3.13"
+dependencies = [
+    "inloop",
+    "requests",
+]
+
+[project.entry-points."inloop.extensions"]
+newsfeed = "newsfeed:EXTENSION"
+
+[tool.uv.sources]
+inloop = { git = "https://github.com/vitalydolgov/inloop.git" }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
