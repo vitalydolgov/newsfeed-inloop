@@ -9,7 +9,7 @@ from zoneinfo import ZoneInfo
 
 import requests
 
-from inloop import contrib
+from inloop_kit import tool
 
 FEED_URL = "https://techcrunch.com/feed/"
 PT_TZ = ZoneInfo("America/Los_Angeles")
@@ -117,7 +117,7 @@ def _format_page(articles: list[Article], page: int, date_arg: str) -> str:
     return "\n".join(lines).rstrip()
 
 
-@contrib.tool(
+@tool(
     name="techcrunch",
     description=(
         "Fetches TechCrunch articles published on a given date via the site's RSS feed, "

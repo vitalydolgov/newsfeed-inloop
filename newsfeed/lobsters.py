@@ -6,7 +6,7 @@ from datetime import datetime
 
 import requests
 
-from inloop import contrib
+from inloop_kit import tool
 
 _HOTTEST_URL = "https://lobste.rs/hottest.json"
 _STORY_URL = "https://lobste.rs/s/{}.json"
@@ -134,7 +134,7 @@ def _format_comment_page(comments: list[Comment], page: int) -> str:
     return "\n".join(lines).rstrip()
 
 
-@contrib.tool(
+@tool(
     name="lobsters",
     description=(
         "Fetches the current Lobste.rs front page (hottest stories) via the official API, "
@@ -159,7 +159,7 @@ def feed(args: dict) -> str:
     return _format_page(_fetch_news(), page)
 
 
-@contrib.tool(
+@tool(
     name="lobsters_comments",
     description=(
         "Fetches all comments from a Lobste.rs story discussion, including nested replies, "

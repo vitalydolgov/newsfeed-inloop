@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 
 import requests
 
-from inloop import contrib
+from inloop_kit import tool
 
 _TOP_STORIES_URL = "https://hacker-news.firebaseio.com/v0/topstories.json"
 _ITEM_URL = "https://hacker-news.firebaseio.com/v0/item/{}.json"
@@ -193,7 +193,7 @@ def _format_comment_page(comments: list[Comment], page: int, truncated: bool) ->
     return "\n".join(lines).rstrip()
 
 
-@contrib.tool(
+@tool(
     name="hackernews",
     description=(
         "Fetches the current Hacker News front page via the official API, returning title, "
@@ -217,7 +217,7 @@ def feed(args: dict) -> str:
     return _format_page(_fetch_news(), page)
 
 
-@contrib.tool(
+@tool(
     name="hackernews_comments",
     description=(
         "Fetches all comments from a Hacker News discussion, including nested replies, "
