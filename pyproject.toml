@@ -2,7 +2,7 @@
 name = "newsfeed"
 version = "0.1.0"
 description = "Newsfeed: TechCrunch, Hacker News, Lobsters"
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 dependencies = [
     "inloop-kit",
     "requests",
